@@ -1,0 +1,79 @@
+//  **** MIXINS **** 
+
+@mixin marginPadding($val) {
+    margin: $val;
+    padding: $val;
+}
+
+@mixin marginVertical($val) {
+    margin: $val 0px;
+}
+
+@mixin marginHorizontal($val) {
+    margin: 0px $val;
+}
+
+@mixin paddingVertical($val) {
+    padding: $val 0px;
+}
+
+@mixin paddingHorizontal($val) {
+    padding: 0px $val;
+}
+
+@mixin displayFlex() {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+@mixin outerBoxShadowGenerator($top, $right, $left, $bottom, $color, $opacity) {
+    -webkit-box-shadow: $top $right $left $bottom rgba($color, $opacity);
+    -moz-box-shadow: $top $right $left $bottom rgba($color, $opacity);
+    box-shadow: $top $right $left $bottom rgba($color, $opacity);
+}
+
+@mixin innerBoxShadowGenerator($top, $right, $left, $bottom, $color, $opacity) {
+    -webkit-box-shadow: inset $top $right $left $bottom rgba($color, $opacity);
+    -moz-box-shadow: inset $top $right $left $bottom rgba($color, $opacity);
+    box-shadow: inset $top $right $left $bottom rgba($color, $opacity);
+}
+
+@mixin buttonGlobal($backgroundColor, $color, $paddingVertical, $paddingHorizontal, $borderRadius) {
+    @include outerBoxShadowGenerator(0px, 15px, 40px, -20px, $softBlue, .75);
+    background-color: $backgroundColor;
+    color: $color;
+    padding: $paddingVertical $paddingHorizontal;
+    border: 2px solid $backgroundColor;
+    border-radius: $borderRadius;
+    font: {
+        size: 15px;
+        weight: 500;
+    }
+    &:hover {
+        transition: .5s;
+        background-color: transparent;
+        color: $backgroundColor;
+        border: 2px solid $backgroundColor;
+    }
+}
+
+@mixin roundedShape($color, $position, $width, $height) {
+    z-index: 0px;
+    width: $width;
+    height: $height;
+    position: absolute;
+    bottom: 0px;
+    background-color: $color;
+    @if $position == 'left' {
+        left: 0px;
+        border-top-right-radius: $height / 2;
+        border-bottom-right-radius: $height / 2;
+    } @else {
+        right: 0px;
+        border-top-left-radius: $height / 2;
+        border-bottom-left-radius: $height / 2;
+    }
+}
