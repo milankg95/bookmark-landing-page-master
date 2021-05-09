@@ -20,14 +20,17 @@
 
 <body>
 
-	<header class="container-fluid header" id="header">
+	<header class="container-fluid header" id="header"> <!--header-mobile-menu-->
 		<nav class="container flex-space-between header--nav">
-			<a class="flex-justify-align-center" href="#">
+			<a class="flex-justify-align-center header--nav-logo" href="#">
 				<img src="./images/logo-bookmark.svg" alt="Logo bookmark" />
 			</a>
-			<div class="flex-space-between">
+			<div class="flex-space-between header--nav-menu-lg">
 				<navigation-component></navigation-component>
 				<a class="btn-danger header--nav-login" href="#">LOGIN</a>
+			</div>
+			<div class="flex-end header--nav-menu-xs">
+				<img src="./images/icon-hamburger.svg" alt="Icon close">
 			</div>
 		</nav>
 	</header>
@@ -38,7 +41,7 @@
 				<section-descriptor title-level="1" title="A Simple Bookmark Manager" content="A clean and simple interface to organize your favourite websites. Open a new
 					browser tab and see your sites load instantly. Try it for free.">
 				</section-descriptor>
-
+				<br />
 				<a class="btn-theme" href="#">Get it on Chrome</a>
 				<a class="btn-light" href="#">Get it on Firefox</a>
 			</div>
@@ -49,73 +52,69 @@
 	</div>
 
 	<div class="container-fluid home-features">
-		<div class="container w-100 flex-justify-align-center flex-column home-features--div">
-			<section-descriptor text-align="center" title="Features" content="Our aim is to make it quick and easy for you to access your favourite websites.
-				Your bookmarks sync between your devices so you can access them on the go.">
-			</section-descriptor>
+		<div class="container">
+			<div class="w-100 flex-justify-align-center flex-column home-features--div">
+				<section-descriptor text-align="center" title="Features" content="Our aim is to make it quick and easy for you to access your favourite websites.
+					Your bookmarks sync between your devices so you can access them on the go.">
+				</section-descriptor>
 
-			<div class="tabs-wrapper">
+				<div class="tabs-wrapper">
+				
+					<tab-component>
+						<span slot="tab">Simple Bookmarking</span>
+						<div slot="content">
+							<div class="w-100 flex-space-between tab-content-wrapper">
+								<div>
+									<img src="./images/illustration-features-tab-1.svg" alt="Feature tab 1">
+								</div>
+								<div>
+									<section-descriptor title="Bookmark in one click" content="Organize your bookmarks however you like. Our simple drag-and-drop interface
+									gives you complete control over how you manage your favourite sites.">
+									</section-descriptor>
+									<br />
+									<a href="#" class="btn-theme">More Info</a>
+								</div>
+							</div>
+						</div>
+				
+						<span slot="tab">Speedy Searching</span>
+						<div slot="content">
+							<div class="w-100 flex-space-between tab-content-wrapper">
+								<div>
+									<img src="./images/illustration-features-tab-2.svg" alt="Feature tab 2">
+								</div>
+								<div>
+									<section-descriptor title="Intelligent search" content="Our powerful search feature will help you find saved sites in no time at all.
+									No need to trawl through all of your bookmarks.">
+									</section-descriptor>
+									<br />
+									<a href="#" class="btn-theme">More Info</a>
+								</div>
+							</div>
+						</div>
+				
+						<span slot="tab">Easy Sharing</span>
+						<div slot="content">
+							<div class="w-100 flex-space-between tab-content-wrapper">
+								<div>
+									<img src="./images/illustration-features-tab-3.svg" alt="Feature tab 3">
+								</div>
+								<div>
+									<section-descriptor title="Share your bookmarks" content="Easily share your bookmarks and collections with others. Create a shareable
+									link that you can send at the click of a button.">
+									</section-descriptor>
+									<br />
+									<a href="#" class="btn-theme">More Info</a>
+								</div>
+							</div>
+						</div>
+					</tab-component>
 
-			
-			<tab-component>
-				<span slot="tab">Simple Bookmarking</span>
-				<div slot="content">
-					<div class="w-100 flex-space-between">
-						<div>
-							<img src="./images/illustration-features-tab-1.svg" alt="Feature tab 1">
-						</div>
-						<div>
-							<section-descriptor title="Bookmark in one click" content="Organize your bookmarks however you like. Our simple drag-and-drop interface
-							gives you complete control over how you manage your favourite sites.">
-							</section-descriptor>
-							<a href="#" class="btn-theme">More Info</a>
-						</div>
-					</div>
 				</div>
-		
-				<span slot="tab">Speedy Searching</span>
-				<div slot="content">
-					<div class="w-100 flex-space-between">
-						<div>
-							<img src="./images/illustration-features-tab-2.svg" alt="Feature tab 2">
-						</div>
-						<div>
-							<section-descriptor title="Intelligent search" content="Our powerful search feature will help you find saved sites in no time at all.
-							No need to trawl through all of your bookmarks.">
-							</section-descriptor>
-							<a href="#" class="btn-theme">More Info</a>
-						</div>
-					</div>
-				</div>
-		
-				<span slot="tab">Easy Sharing</span>
-				<div slot="content">
-					<div class="w-100 flex-space-between">
-						<div>
-							<img src="./images/illustration-features-tab-3.svg" alt="Feature tab 3">
-						</div>
-						<div>
-							<section-descriptor title="Share your bookmarks" content="Easily share your bookmarks and collections with others. Create a shareable
-							link that you can send at the click of a button.">
-							</section-descriptor>
-							<a href="#" class="btn-theme">More Info</a>
-						</div>
-					</div>
-				</div>
-			</tab-component>
 
-		</div>
-
+			</div>
 		</div>
 	</div>
-
-	<!-- <section-descriptor 
-		title="Bookmark in one click"
-		content="Organize your bookmarks however you like. Our simple drag-and-drop interface
-		gives you complete control over how you manage your favourite sites."
-	>
-	</section-descriptor> -->
-
 
 	<div class="container-fluid home-extensions">
 		<div class="container home-extensions--div">
@@ -146,73 +145,77 @@
 	</div>
 
 	<div class="container-fluid home-faq">
-		<div class="flex-justify-align-center flex-column container home-faq--div">
-			<section-descriptor text-align="center" title="Frequently Asked Questions" content="Here are some of our FAQs. If you have any other questions you’d like
-				answered please feel free to email us.">
-			</section-descriptor>
+		<div class="container">
+			<div class="flex-justify-align-center flex-column container home-faq--div">
+				<section-descriptor text-align="center" title="Frequently Asked Questions" content="Here are some of our FAQs. If you have any other questions you’d like
+					answered please feel free to email us.">
+				</section-descriptor>
 
-			<div class="accordion">
-				<accordion-component>
-					<div slot="title">What is Bookmark?</div>
-					<div slot="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt
-						justo eget ultricies fringilla. Phasellus blandit ipsum quis quam ornare mattis.</div>
-				</accordion-component>
+				<div class="accordion">
+					<accordion-component>
+						<div slot="title">What is Bookmark?</div>
+						<div slot="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt
+							justo eget ultricies fringilla. Phasellus blandit ipsum quis quam ornare mattis.</div>
+					</accordion-component>
 
-				<accordion-component>
-					<div slot="title">How can I request a new browser?</div>
-					<div slot="content">Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies
-						non ligula.
-						Suspendisse imperdiet. Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa,
-						ultricies non ligula. Suspendisse imperdie tVivamus luctus eros aliquet convallis ultricies.
-						Mauris augue massa, ultricies non ligula. Suspendisse imperdiet.</div>
-				</accordion-component>
+					<accordion-component>
+						<div slot="title">How can I request a new browser?</div>
+						<div slot="content">Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies
+							non ligula.
+							Suspendisse imperdiet. Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa,
+							ultricies non ligula. Suspendisse imperdie tVivamus luctus eros aliquet convallis ultricies.
+							Mauris augue massa, ultricies non ligula. Suspendisse imperdiet.</div>
+					</accordion-component>
 
-				<accordion-component>
-					<div slot="title">Is there a mobile app?</div>
-					<div slot="content">Sed consectetur quam id neque fermentum accumsan. Praesent luctus vestibulum
-						dolor, ut condimentum
-						urna vulputate eget. Cras in ligula quis est pharetra mattis sit amet pharetra purus. Sed
-						sollicitudin ex et ultricies bibendum.</div>
-				</accordion-component>
+					<accordion-component>
+						<div slot="title">Is there a mobile app?</div>
+						<div slot="content">Sed consectetur quam id neque fermentum accumsan. Praesent luctus vestibulum
+							dolor, ut condimentum
+							urna vulputate eget. Cras in ligula quis est pharetra mattis sit amet pharetra purus. Sed
+							sollicitudin ex et ultricies bibendum.</div>
+					</accordion-component>
 
-				<accordion-component>
-					<div slot="title">What about other Chromium browsers?</div>
-					<div slot="content">Integer condimentum ipsum id imperdiet finibus. Vivamus in placerat mi, at
-						euismod dui. Aliquam
-						vitae neque eget nisl gravida pellentesque non ut velit.</div>
-				</accordion-component>
+					<accordion-component>
+						<div slot="title">What about other Chromium browsers?</div>
+						<div slot="content">Integer condimentum ipsum id imperdiet finibus. Vivamus in placerat mi, at
+							euismod dui. Aliquam
+							vitae neque eget nisl gravida pellentesque non ut velit.</div>
+					</accordion-component>
+				</div>
+
+				<a href="#" class="btn-theme">More info</a>
 			</div>
-
-			<a href="#" class="btn-theme">More info</a>
 		</div>
 	</div>
 
 	<footer class="footer" id="footer">
 		<div class="container-fluid">
-			<div class="w-100 flex-justify-align-center footer--contact">
-				<div class="text-center footer--contact-content">
-					<h5>35,000+ already joined</h5>
-					<h3 class="text-white">Stay up-to-date with what we’re doing</h3>
+			<div class="container">
+				<div class="w-100 flex-justify-align-center footer--contact">
+					<div class="text-center footer--contact-content">
+						<h5>35,000+ already joined</h5>
+						<h3 class="text-white">Stay up-to-date with what we’re doing</h3>
 
-					<form class="flex-space-between">
-						<div class="d-flex contact-mail">
-							<input class="contact-mail--input" id="email_address" type="text" placeholder="Enter your email address" />
-							<img class="contact-mail--error-icon" src="./images/icon-error.svg" alt="Icon error" />
-							<span class="text-left contact-mail--error" id="email_error">Whoops, make sure it's an email</span>
-						</div>
-						<button class="btn-danger" id="contact_submit">Contact Us</button>
-					</form>
+						<form class="flex-space-between">
+							<div class="d-flex contact-mail">
+								<input class="contact-mail--input" id="email_address" type="text" placeholder="Enter your email address" />
+								<img class="contact-mail--error-icon" src="./images/icon-error.svg" alt="Icon error" />
+								<span class="text-left contact-mail--error" id="email_error">Whoops, make sure it's an email</span>
+							</div>
+							<button class="btn-danger" id="contact_submit" type="button">Contact Us</button>
+						</form>
+					</div>
 				</div>
 			</div>
 
 			<div class="container-fluid footer--nav">
 				<div class="container">
-					<div class="flex-space-between">
-						<div class="flex-start">
-							<img src="./images/logo-bookmark.svg" alt="Logo bookmark" />
+					<div class="flex-space-between footer-nav-wrapper">
+						<div class="flex-start footer-nav-wrapper--div">
+							<img class="footer-logo" src="./images/logo-bookmark.svg" alt="Logo bookmark" />
 							<navigation-component></navigation-component>
 						</div>
-						<div class="flex-end">
+						<div class="flex-end footer-nav-wrapper--div">
 							<ul class="flex-space-between footer--nav-social">
 								<li>
 									<a href="#">
@@ -230,7 +233,6 @@
 				</div>
 			</div>
 		</div>
-
 	</footer>
 
 	<!-- Components -->

@@ -22,14 +22,14 @@ contactSubmitBtn.addEventListener('click', function() {
     var emailInput = document.getElementById('email_address');
     var footer = document.getElementById('footer');
 
-    if (!validateEmail(emailInput.value)) {
-        footer.classList.add('footer-error');
-    } else {
-        footer.classList.remove('footer-error');
+    if (emailInput.value !== '') {
+        if (!validateEmail(emailInput.value)) {
+            footer.classList.add('footer-error');
+        } else {
+            footer.classList.remove('footer-error');
+        }
     }
 });
-
-console.log(document.getElementById('email_address').value)
 
 // FUNCTIONS
 

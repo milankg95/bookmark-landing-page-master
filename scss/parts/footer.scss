@@ -97,3 +97,35 @@
         visibility: visible;
     }
 }
+
+// Small
+@media (max-width: $mediumWidth) {
+    .footer form {
+        justify-content: center;
+        flex-wrap: wrap;
+        .contact-mail {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        #contact_submit {
+            width: 100%;
+        }
+    }
+
+    .footer-nav-wrapper {
+        justify-content: center;
+        flex-direction: column;
+        &--div {
+            justify-content: center;
+            flex-direction: column;
+        }
+    }
+
+    .footer-logo {
+        margin-bottom: 40px;
+    }
+
+    .footer--nav-social li:first-of-type a {
+        margin-left: 0px;
+    }
+}

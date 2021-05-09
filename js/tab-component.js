@@ -35,15 +35,12 @@ class TabComponent extends HTMLElement {
             </style>
 
             <style>
-                :host { display: flex; flex-direction: column; }
-                :host([direction="column"]) { flex-direction: row; }
-                :host([direction="column"]) .tab-trigger { flex-direction: column; }
-                .tab-trigger { display: flex; flex-direction: row; flex-wrap: nowrap; gap: var(--tab-gap, 0px); }
-                
-                .tab-trigger ::slotted(*) { padding: 5px; border: 1px solid #ccc; user-select: none; cursor: pointer; }
-                .tab-trigger ::slotted(.selected) { background: #efefef; }
-                .tab-contents ::slotted(*) { display: none; }
-                .tab-contents ::slotted(.selected) { display: block; padding: 5px; }
+            :host { 
+                display: flex; 
+                flex-direction: column; 
+                justify-content: space-between;
+                align-items: center;
+            }
             </style>
             
             <div class="tab-trigger">

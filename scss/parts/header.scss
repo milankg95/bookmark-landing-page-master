@@ -12,6 +12,10 @@
         &-login {
             margin-left: 30px;
         }
+        &-menu-xs {
+            display: none !important;
+            cursor: pointer;
+        }
     }
 }
 
@@ -20,5 +24,25 @@
     @include outerBoxShadowGenerator(0px, 0px, 10px, 0px, $softBlue, .75);
     nav {
         @include paddingVertical(20px);
+    }
+}
+
+.header-mobile-menu {
+    background-color: rgba($softBlue, .75);
+    height: 100%;
+}
+
+
+// Medium
+@media (max-width: $mediumWidth) {
+    .header {
+        &--nav {
+            &-menu-xs {
+                display: block !important;
+            }
+            &-menu-lg {
+                display: none !important;
+            }
+        }
     }
 }
