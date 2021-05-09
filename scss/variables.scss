@@ -1,5 +1,8 @@
 //  **** LAYOUT **** 
-$mobileWidth: 375px;
+$extraSmallMobileWidth: 375px;
+$smallWidtth: 576px;
+$mediumWidth: 768px;
+$largeWidth: 992px;
 $desktopWidth: 1440px;
 
 // COLORS
@@ -12,3 +15,6 @@ $veryDarkBlue: hsl(229, 31%, 21%);
 
 // TYPOGRAPHY
 $fontRubik: 'Rubik', sans-serif;
+
+// OTHERS
+$extensionMarginTop: -100px;

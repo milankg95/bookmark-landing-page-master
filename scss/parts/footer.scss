@@ -1,0 +1,99 @@
+//  **** IMPORTS **** 
+// Helpers
+@import './variables.scss';
+@import './mixins.scss';
+
+//  **** FOOTER **** 
+.footer {
+    background-color: $softBlue;
+    &--contact {
+        @include paddingVertical(50px);
+        padding-bottom: 80px;
+        color: #fff;
+        &-content {
+            max-width: 550px;
+            width: 100%;
+            h3 {
+                font: {
+                    weight: 500;
+                    size: 38px;
+                }
+            }
+            h5 {
+                text-transform: uppercase;
+                letter-spacing: 5px;
+                font: {
+                    weight: 400;
+                    size: 17px;
+                }
+            }
+        }
+    }
+    &--nav {
+        @include paddingVertical(30px);
+        background-color: $veryDarkBlue;
+        &-social a {
+            display: inline-block;
+            color: #fff;
+            margin-left: 40px;
+        }
+    }
+
+    .contact-mail {
+        width: calc(100% - 170px);
+        position: relative;
+        &--input {
+            width: 100%;
+            background-color: #fff;
+            color: $veryDarkBlue;
+            padding: 16px 20px;
+            font-size: 15px;
+            border: {
+                width: 0px;
+                radius: 6px;
+            }
+        }
+        &--error {
+            visibility: hidden;
+            position: absolute;
+            width: calc(100% - 30px);
+            left: 0px;
+            bottom: -31px;
+            background-color: $softRed;
+            color: #fff;
+            padding: 10px 15px;
+            font: {
+                size: 13px;
+                style: italic;
+            }
+            border-bottom: {
+                left-radius: 6px;
+                right-radius: 6px;
+            }
+        }
+        &--error-icon {
+            visibility: hidden;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+    }
+}
+
+.footer-error {
+    .contact-mail--input, button {
+        border: 2px solid $softRed;
+    }
+    button {
+        background-color: #fff;
+        color: $softRed;
+        &:hover {
+            background-color: #fff;
+            color: $softRed;
+        }
+    }
+
+    .contact-mail--error, .contact-mail--error-icon {
+        visibility: visible;
+    }
+}

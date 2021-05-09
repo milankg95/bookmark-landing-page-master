@@ -1,0 +1,24 @@
+//  **** IMPORTS **** 
+// Helpers
+@import './variables.scss';
+@import './mixins.scss';
+
+//  **** HEADER **** 
+.header {
+    background-color: #fff;
+    position: fixed;
+    &--nav {
+        @include paddingVertical(50px);
+        &-login {
+            margin-left: 30px;
+        }
+    }
+}
+
+.header-scrolled {
+    transition: .5s;
+    @include outerBoxShadowGenerator(0px, 0px, 10px, 0px, $softBlue, .75);
+    nav {
+        @include paddingVertical(20px);
+    }
+}

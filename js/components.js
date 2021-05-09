@@ -3,15 +3,7 @@
 const sectionWrapperTemplate = document.createElement('template');
 sectionWrapperTemplate.innerHTML = `
     <style>
-        .container-fluid {
-            width: 100%;
-        }
-        
-        .container {
-            max-width: $desktopWidth;
-            width: calc(100% - 30px);
-            margin: 0px auto;
-        }
+        @import "./css/main.css"
     </style>
     <section class="container-fluid"">
         <div class="container">

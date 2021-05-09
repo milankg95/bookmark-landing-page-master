@@ -52,7 +52,7 @@
         size: 15px;
         weight: 500;
     }
-    &:hover {
+    &:hover, &:focus, &:active {
         transition: .5s;
         background-color: transparent;
         color: $backgroundColor;

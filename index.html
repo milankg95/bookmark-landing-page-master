@@ -20,42 +20,91 @@
 
 <body>
 
-
-	<!-- <section-wrapper>
-		<div slot="content">
-			<h1>test</h1>
-		</div>
-	</section-wrapper> -->
-
-	
+	<header class="container-fluid header" id="header">
+		<nav class="container flex-space-between header--nav">
+			<a class="flex-justify-align-center" href="#">
+				<img src="./images/logo-bookmark.svg" alt="Logo bookmark" />
+			</a>
+			<div class="flex-space-between">
+				<navigation-component></navigation-component>
+				<a class="btn-danger header--nav-login" href="#">LOGIN</a>
+			</div>
+		</nav>
+	</header>
 
 	<div class="container-fluid home-hero">
 		<div class="container flex-space-between home-hero--div">
 			<div>
-				<section-descriptor 
-					title-level="1"
-					title="A Simple Bookmark Manager"
-					content="A clean and simple interface to organize your favourite websites. Open a new
-					browser tab and see your sites load instantly. Try it for free."
-				>
+				<section-descriptor title-level="1" title="A Simple Bookmark Manager" content="A clean and simple interface to organize your favourite websites. Open a new
+					browser tab and see your sites load instantly. Try it for free.">
 				</section-descriptor>
 
 				<a class="btn-theme" href="#">Get it on Chrome</a>
 				<a class="btn-light" href="#">Get it on Firefox</a>
 			</div>
-			<h1>test</h1>
+			<div>
+				<img src="./images/illustration-hero.svg" alt="Hero image">
+			</div>
 		</div>
 	</div>
 
 	<div class="container-fluid home-features">
-		<div class="flex-justify-align-center container home-features--div">
-			<section-descriptor 
-				text-align="center"
-				title="Features"
-				content="Our aim is to make it quick and easy for you to access your favourite websites.
-				Your bookmarks sync between your devices so you can access them on the go."
-			>
+		<div class="container w-100 flex-justify-align-center flex-column home-features--div">
+			<section-descriptor text-align="center" title="Features" content="Our aim is to make it quick and easy for you to access your favourite websites.
+				Your bookmarks sync between your devices so you can access them on the go.">
 			</section-descriptor>
+
+			<div class="tabs-wrapper">
+
+			
+			<tab-component>
+				<span slot="tab">Simple Bookmarking</span>
+				<div slot="content">
+					<div class="w-100 flex-space-between">
+						<div>
+							<img src="./images/illustration-features-tab-1.svg" alt="Feature tab 1">
+						</div>
+						<div>
+							<section-descriptor title="Bookmark in one click" content="Organize your bookmarks however you like. Our simple drag-and-drop interface
+							gives you complete control over how you manage your favourite sites.">
+							</section-descriptor>
+							<a href="#" class="btn-theme">More Info</a>
+						</div>
+					</div>
+				</div>
+		
+				<span slot="tab">Speedy Searching</span>
+				<div slot="content">
+					<div class="w-100 flex-space-between">
+						<div>
+							<img src="./images/illustration-features-tab-2.svg" alt="Feature tab 2">
+						</div>
+						<div>
+							<section-descriptor title="Intelligent search" content="Our powerful search feature will help you find saved sites in no time at all.
+							No need to trawl through all of your bookmarks.">
+							</section-descriptor>
+							<a href="#" class="btn-theme">More Info</a>
+						</div>
+					</div>
+				</div>
+		
+				<span slot="tab">Easy Sharing</span>
+				<div slot="content">
+					<div class="w-100 flex-space-between">
+						<div>
+							<img src="./images/illustration-features-tab-3.svg" alt="Feature tab 3">
+						</div>
+						<div>
+							<section-descriptor title="Share your bookmarks" content="Easily share your bookmarks and collections with others. Create a shareable
+							link that you can send at the click of a button.">
+							</section-descriptor>
+							<a href="#" class="btn-theme">More Info</a>
+						</div>
+					</div>
+				</div>
+			</tab-component>
+
+		</div>
 
 		</div>
 	</div>
@@ -71,41 +120,25 @@
 	<div class="container-fluid home-extensions">
 		<div class="container home-extensions--div">
 			<div class="flex-justify-align-center flex-column">
-				<section-descriptor 
-					text-align="center"
-					title="Download the extension"
-					content="We’ve got more browsers in the pipeline. Please do let us know if you’ve
-					got a favourite you’d like us to prioritize."
-				>
+				<section-descriptor text-align="center" title="Download the extension" content="We’ve got more browsers in the pipeline. Please do let us know if you’ve
+					got a favourite you’d like us to prioritize.">
 				</section-descriptor>
 
 				<div class="flex-space-between flex-row home-extensions--div-items">
 
 					<div>
-						<extension-item
-							imgUrl="./images/logo-chrome.svg"
-							title="Add to Chrome"
-							version="Minimum version 62"
-							link="#"
-						></extension-item>
+						<extension-item imgUrl="./images/logo-chrome.svg" title="Add to Chrome"
+							version="Minimum version 62" link="#"></extension-item>
 					</div>
 
 					<div>
-						<extension-item
-							imgUrl="./images/logo-firefox.svg"
-							title="Add to Firefox"
-							version="Minimum version 55"
-							link="#"
-						></extension-item>
+						<extension-item imgUrl="./images/logo-firefox.svg" title="Add to Firefox"
+							version="Minimum version 55" link="#"></extension-item>
 					</div>
 
 					<div>
-						<extension-item
-							imgUrl="./images/logo-opera.svg"
-							title="Add to Opera"
-							version="Minimum version 46"
-							link="#"
-						></extension-item>
+						<extension-item imgUrl="./images/logo-opera.svg" title="Add to Opera"
+							version="Minimum version 46" link="#"></extension-item>
 					</div>
 				</div>
 			</div>
@@ -114,136 +147,99 @@
 
 	<div class="container-fluid home-faq">
 		<div class="flex-justify-align-center flex-column container home-faq--div">
-			<section-descriptor 
-				text-align="center"
-				title="Frequently Asked Questions"
-				content="Here are some of our FAQs. If you have any other questions you’d like
-				answered please feel free to email us."
-			>
+			<section-descriptor text-align="center" title="Frequently Asked Questions" content="Here are some of our FAQs. If you have any other questions you’d like
+				answered please feel free to email us.">
 			</section-descriptor>
+
+			<div class="accordion">
+				<accordion-component>
+					<div slot="title">What is Bookmark?</div>
+					<div slot="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt
+						justo eget ultricies fringilla. Phasellus blandit ipsum quis quam ornare mattis.</div>
+				</accordion-component>
+
+				<accordion-component>
+					<div slot="title">How can I request a new browser?</div>
+					<div slot="content">Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies
+						non ligula.
+						Suspendisse imperdiet. Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa,
+						ultricies non ligula. Suspendisse imperdie tVivamus luctus eros aliquet convallis ultricies.
+						Mauris augue massa, ultricies non ligula. Suspendisse imperdiet.</div>
+				</accordion-component>
+
+				<accordion-component>
+					<div slot="title">Is there a mobile app?</div>
+					<div slot="content">Sed consectetur quam id neque fermentum accumsan. Praesent luctus vestibulum
+						dolor, ut condimentum
+						urna vulputate eget. Cras in ligula quis est pharetra mattis sit amet pharetra purus. Sed
+						sollicitudin ex et ultricies bibendum.</div>
+				</accordion-component>
+
+				<accordion-component>
+					<div slot="title">What about other Chromium browsers?</div>
+					<div slot="content">Integer condimentum ipsum id imperdiet finibus. Vivamus in placerat mi, at
+						euismod dui. Aliquam
+						vitae neque eget nisl gravida pellentesque non ut velit.</div>
+				</accordion-component>
+			</div>
 
 			<a href="#" class="btn-theme">More info</a>
 		</div>
 	</div>
 
-	<footer class="footer">
+	<footer class="footer" id="footer">
+		<div class="container-fluid">
+			<div class="w-100 flex-justify-align-center footer--contact">
+				<div class="text-center footer--contact-content">
+					<h5>35,000+ already joined</h5>
+					<h3 class="text-white">Stay up-to-date with what we’re doing</h3>
+
+					<form class="flex-space-between">
+						<div class="d-flex contact-mail">
+							<input class="contact-mail--input" id="email_address" type="text" placeholder="Enter your email address" />
+							<img class="contact-mail--error-icon" src="./images/icon-error.svg" alt="Icon error" />
+							<span class="text-left contact-mail--error" id="email_error">Whoops, make sure it's an email</span>
+						</div>
+						<button class="btn-danger" id="contact_submit">Contact Us</button>
+					</form>
+				</div>
+			</div>
+
+			<div class="container-fluid footer--nav">
+				<div class="container">
+					<div class="flex-space-between">
+						<div class="flex-start">
+							<img src="./images/logo-bookmark.svg" alt="Logo bookmark" />
+							<navigation-component></navigation-component>
+						</div>
+						<div class="flex-end">
+							<ul class="flex-space-between footer--nav-social">
+								<li>
+									<a href="#">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path fill="#FFF" fill-rule="evenodd" d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z"/></svg>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<img src="./images/icon-twitter.svg" alt="Twitter logo" />
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
 	</footer>
 
 	<!-- Components -->
+	<script src="js/navigation.js" type="text/javascript" defer></script>
 	<script src="js/components.js" type="text/javascript" defer></script>
+	<script src="js/accordion-component.js" type="text/javascript" defer></script>
+	<script src="js/tab-component.js" type="text/javascript" defer></script>
 
 	<script src="js/main.js" type="application/javascript"></script>
-
-	Features
-	Pricing
-	Contact
-	Login
-
-	A Simple Bookmark Manager
-
-	A clean and simple interface to organize your favourite websites. Open a new
-	browser tab and see your sites load instantly. Try it for free.
-
-	Get it on Chrome
-	Get it on Firefox
-
-	Features
-
-	Our aim is to make it quick and easy for you to access your favourite websites.
-	Your bookmarks sync between your devices so you can access them on the go.
-
-	Simple Bookmarking
-	Speedy Searching
-	Easy Sharing
-
-	Bookmark in one click
-
-	Organize your bookmarks however you like. Our simple drag-and-drop interface
-	gives you complete control over how you manage your favourite sites.
-
-	More Info
-
-	Intelligent search
-
-	Our powerful search feature will help you find saved sites in no time at all.
-	No need to trawl through all of your bookmarks.
-
-	More Info
-
-	Share your bookmarks
-
-	Easily share your bookmarks and collections with others. Create a shareable
-	link that you can send at the click of a button.
-
-	More Info
-
-	Download the extension
-
-	We’ve got more browsers in the pipeline. Please do let us know if you’ve
-	got a favourite you’d like us to prioritize.
-
-	Add to Chrome
-	Minimum version 62
-	Add & Install Extension
-
-	Add to Firefox
-	Minimum version 55
-	Add & Install Extension
-
-	Add to Opera
-	Minimum version 46
-	Add & Install Extension
-
-	Frequently Asked Questions
-
-	Here are some of our FAQs. If you have any other questions you’d like
-	answered please feel free to email us.
-
-	<!-- Question 1 -->
-	What is Bookmark?
-
-	<!-- Answer 1 -->
-	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt
-	justo eget ultricies fringilla. Phasellus blandit ipsum quis quam ornare mattis.
-
-	<!-- Question 2 -->
-	How can I request a new browser?
-
-	<!-- Answer 2 -->
-	Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula.
-	Suspendisse imperdiet. Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa,
-	ultricies non ligula. Suspendisse imperdie tVivamus luctus eros aliquet convallis ultricies.
-	Mauris augue massa, ultricies non ligula. Suspendisse imperdiet.
-
-	<!-- Question 3 -->
-	Is there a mobile app?
-
-	<!-- Answer 3 -->
-	Sed consectetur quam id neque fermentum accumsan. Praesent luctus vestibulum dolor, ut condimentum
-	urna vulputate eget. Cras in ligula quis est pharetra mattis sit amet pharetra purus. Sed
-	sollicitudin ex et ultricies bibendum.
-
-	<!-- Question 4 -->
-	What about other Chromium browsers?
-
-	<!-- Answer 4 -->
-	Integer condimentum ipsum id imperdiet finibus. Vivamus in placerat mi, at euismod dui. Aliquam
-	vitae neque eget nisl gravida pellentesque non ut velit.
-
-	More Info
-
-	35,000+ already joined
-
-	Stay up-to-date with what we’re doing
-
-	Contact Us
-
-	Features
-	Pricing
-	Contact
-
-
 </body>
 
 </html>
