@@ -1,6 +1,7 @@
 .header {
   background-color: #fff;
-  position: fixed; }
+  position: fixed;
+  z-index: 10; }
   .header--nav {
     padding: 50px 0px; }
     .header--nav-login {

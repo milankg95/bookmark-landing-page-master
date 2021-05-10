@@ -1,6 +1,7 @@
 .header {
   background-color: #fff;
-  position: fixed; }
+  position: fixed;
+  z-index: 10; }
   .header--nav {
     padding: 50px 0px; }
     .header--nav-login {
@@ -156,6 +157,9 @@ ul {
 
 .d-none {
   display: none; }
+
+.position-relative {
+  position: relative; }
 
 .d-flex {
   display: -webkit-box;
@@ -351,10 +355,11 @@ h3 {
       color: #fa5757; }
 
 .rounded-blue-shape-left {
-  z-index: 0px;
+  z-index: 0;
   width: 35%;
   height: 400px;
   position: absolute;
+  top: 45%;
   bottom: 0px;
   background-color: #5368df;
   left: 0px;
@@ -362,10 +367,11 @@ h3 {
   border-bottom-right-radius: 200px; }
 
 .rounded-blue-shape-right {
-  z-index: 0px;
+  z-index: 0;
   width: 35%;
   height: 400px;
   position: absolute;
+  top: 45%;
   bottom: 0px;
   background-color: #5368df;
   right: 0px;
@@ -439,7 +445,8 @@ tab-component {
   justify-content: space-between;
   width: 100%; }
   .tab-content-wrapper > div {
-    width: 40%; }
+    width: 40%;
+    z-index: 2; }
   .tab-content-wrapper > div:nth-child(1) img {
     width: 100%; }
   .tab-content-wrapper > div:nth-child(2) {
@@ -505,6 +512,8 @@ tab-component {
   padding-top: 132px; }
   .home-hero--div {
     padding: 120px 0px; }
+    .home-hero--div > div {
+      z-index: 1; }
     .home-hero--div h1 {
       margin-top: 0px; }
     .home-hero--div img {

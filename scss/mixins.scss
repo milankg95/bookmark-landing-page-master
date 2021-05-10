@@ -70,10 +70,11 @@
 }
 
 @mixin roundedShape($color, $position, $width, $height) {
-    z-index: 0px;
+    z-index: 0;
     width: $width;
     height: $height;
     position: absolute;
+    top: 45%;
     bottom: 0px;
     background-color: $color;
     @if $position == 'left' {
