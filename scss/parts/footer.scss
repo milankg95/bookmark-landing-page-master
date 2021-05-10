@@ -1,7 +1,7 @@
 //  **** IMPORTS **** 
 // Helpers
-@import './variables.scss';
-@import './mixins.scss';
+@import '../variables.scss';
+@import '../mixins.scss';
 
 //  **** FOOTER **** 
 .footer {
@@ -36,6 +36,12 @@
             display: inline-block;
             color: #fff;
             margin-left: 40px;
+            &:hover {
+                svg path {
+                    transition: .5s;
+                    fill: $softRed;
+                }
+            }
         }
     }
 
@@ -100,15 +106,50 @@
 
 // Small
 @media (max-width: $mediumWidth) {
-    .footer form {
-        justify-content: center;
-        flex-wrap: wrap;
-        .contact-mail {
-            width: 100%;
-            margin-bottom: 20px;
+    .footer {
+        form {
+            justify-content: center;
+            flex-wrap: wrap;
+            .contact-mail {
+                flex-wrap: wrap;
+                width: 100%;
+                margin-bottom: 20px;
+                &--error {
+                    display: none;
+                    position: relative;
+                    bottom: 3px;
+                }
+            }
+            #contact_submit {
+                width: 100%;
+            }
         }
-        #contact_submit {
-            width: 100%;
+        &--contact {
+            &-content {
+                h3 {
+                    font-size: 26px;
+                }
+                h5 {
+                    font-size: 14px;
+                }
+            }
+        }
+
+
+        &--nav {
+            &-social a {
+                &:hover {
+                    svg path {
+                        fill: #fff;
+                    }
+                }
+            }
+        }
+    }
+
+    .footer.footer-error {
+        .contact-mail--error {
+            display: block;
         }
     }
 

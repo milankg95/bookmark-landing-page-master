@@ -32,17 +32,7 @@ class TabComponent extends HTMLElement {
         this.shadow.innerHTML = `
             <style>
             @import "./css/main.css"
-            </style>
-
-            <style>
-            :host { 
-                display: flex; 
-                flex-direction: column; 
-                justify-content: space-between;
-                align-items: center;
-            }
-            </style>
-            
+            </style>            
             <div class="tab-trigger">
                 <slot id="tab-slot" name="tab"></slot>
             </div>

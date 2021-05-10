@@ -1,0 +1,30 @@
+.header {
+  background-color: #fff;
+  position: fixed; }
+  .header--nav {
+    padding: 50px 0px; }
+    .header--nav-login {
+      margin-left: 30px; }
+    .header--nav-menu-xs {
+      display: none !important;
+      cursor: pointer; }
+
+.header-scrolled {
+  transition: .5s;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(83, 104, 223, 0.75);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(83, 104, 223, 0.75);
+  box-shadow: 0px 0px 10px 0px rgba(83, 104, 223, 0.75); }
+  .header-scrolled nav {
+    padding: 20px 0px; }
+
+.header-mobile-menu {
+  background-color: rgba(83, 104, 223, 0.75);
+  height: 100%; }
+
+@media (max-width: 768px) {
+  .header--nav-menu-xs {
+    display: block !important; }
+  .header--nav-menu-lg {
+    display: none !important; } }
+
+/*# sourceMappingURL=header.css.map */

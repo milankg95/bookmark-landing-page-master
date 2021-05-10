@@ -6,7 +6,7 @@ templateAccordion.innerHTML = `
 <div class="accordion--item">
     <div class="flex-space-between accordion--item-trigger">
         <span><slot name="title" /></span>
-        <img src="./images/icon-arrow.svg" />
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="12"><path fill="none" stroke="#5267DF" stroke-width="3" d="M1 1l8 8 8-8"/></svg>
     </div>
     <div class="accordion--item-content">
         <p><slot name="content" /></p>
@@ -19,6 +19,9 @@ class AccordionComponent extends HTMLElement {
         super();
 
         this.showContent = false;
+
+        this.iconInactive = '#5267df';
+        this.iconActive = '#fa5757';
 
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.appendChild(templateAccordion.content.cloneNode(true));
@@ -34,10 +37,10 @@ class AccordionComponent extends HTMLElement {
         if (this.showContent) {
             // document.querySelector('.accordion--item-content').style.display('none');
             contentVisibility.style.display = 'block';
-            // contentVisibility.classList.add('show');
+            contentVisibility.parentElement.classList.add('active');
         } else {
             contentVisibility.style.display = 'none';
-            // contentVisibility.classList.remove('show');
+            contentVisibility.parentElement.classList.remove('active');
         }
     }
 

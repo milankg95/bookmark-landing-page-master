@@ -1,0 +1,106 @@
+.footer {
+  background-color: #5368df; }
+  .footer--contact {
+    padding: 50px 0px;
+    padding-bottom: 80px;
+    color: #fff; }
+    .footer--contact-content {
+      max-width: 550px;
+      width: 100%; }
+      .footer--contact-content h3 {
+        font-weight: 500;
+        font-size: 38px; }
+      .footer--contact-content h5 {
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        font-weight: 400;
+        font-size: 17px; }
+  .footer--nav {
+    padding: 30px 0px;
+    background-color: #252b46; }
+    .footer--nav-social a {
+      display: inline-block;
+      color: #fff;
+      margin-left: 40px; }
+      .footer--nav-social a:hover svg path {
+        transition: .5s;
+        fill: #fa5757; }
+  .footer .contact-mail {
+    width: calc(100% - 170px);
+    position: relative; }
+    .footer .contact-mail--input {
+      width: 100%;
+      background-color: #fff;
+      color: #252b46;
+      padding: 16px 20px;
+      font-size: 15px;
+      border-width: 0px;
+      border-radius: 6px; }
+    .footer .contact-mail--error {
+      visibility: hidden;
+      position: absolute;
+      width: calc(100% - 30px);
+      left: 0px;
+      bottom: -31px;
+      background-color: #fa5757;
+      color: #fff;
+      padding: 10px 15px;
+      font-size: 13px;
+      font-style: italic;
+      border-bottom-left-radius: 6px;
+      border-bottom-right-radius: 6px; }
+    .footer .contact-mail--error-icon {
+      visibility: hidden;
+      position: absolute;
+      top: 15px;
+      right: 15px; }
+
+.footer-error .contact-mail--input, .footer-error button {
+  border: 2px solid #fa5757; }
+.footer-error button {
+  background-color: #fff;
+  color: #fa5757; }
+  .footer-error button:hover {
+    background-color: #fff;
+    color: #fa5757; }
+.footer-error .contact-mail--error, .footer-error .contact-mail--error-icon {
+  visibility: visible; }
+
+@media (max-width: 768px) {
+  .footer form {
+    justify-content: center;
+    flex-wrap: wrap; }
+    .footer form .contact-mail {
+      flex-wrap: wrap;
+      width: 100%;
+      margin-bottom: 20px; }
+      .footer form .contact-mail--error {
+        display: none;
+        position: relative;
+        bottom: 3px; }
+    .footer form #contact_submit {
+      width: 100%; }
+  .footer--contact-content h3 {
+    font-size: 26px; }
+  .footer--contact-content h5 {
+    font-size: 14px; }
+  .footer--nav-social a:hover svg path {
+    fill: #fff; }
+
+  .footer.footer-error .contact-mail--error {
+    display: block; }
+
+  .footer-nav-wrapper {
+    justify-content: center;
+    flex-direction: column; }
+    .footer-nav-wrapper--div {
+      justify-content: center;
+      flex-direction: column; }
+
+  .footer-logo {
+    margin-bottom: 40px; }
+
+  .footer--nav-social li:first-of-type a {
+    margin-left: 0px; } }
+
+/*# sourceMappingURL=footer.css.map */

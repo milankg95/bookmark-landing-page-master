@@ -43,11 +43,13 @@
 
 @mixin buttonGlobal($backgroundColor, $color, $paddingVertical, $paddingHorizontal, $borderRadius) {
     @include outerBoxShadowGenerator(0px, 15px, 40px, -20px, $softBlue, .75);
+    display: inline-block;
     background-color: $backgroundColor;
     color: $color;
     padding: $paddingVertical $paddingHorizontal;
     border: 2px solid $backgroundColor;
     border-radius: $borderRadius;
+    text-align: center;
     font: {
         size: 15px;
         weight: 500;
@@ -57,6 +59,13 @@
         background-color: transparent;
         color: $backgroundColor;
         border: 2px solid $backgroundColor;
+    }
+    @media (max-width: $mediumWidth) {
+        &:hover, &:focus, &:active {
+            background-color: $backgroundColor;
+            color: $color;
+            border: 2px solid $backgroundColor;
+        }
     }
 }
 

@@ -5,13 +5,19 @@ templateNavigation.innerHTML = `
 </style>
 <ul class="flex-row navigation-ul">
     <li class="navigation-ul--li">
-        <a class="navigation-ul--li-link" href="#">Features</a>
+        <a class="navigation-ul--li-link" href="#">
+            Features
+        </a>
     </li>
     <li class="navigation-ul--li">
-        <a class="navigation-ul--li-link" href="#">Pricing</a>
+        <a class="navigation-ul--li-link" href="#">
+            Pricing
+        </a>
     </li>
     <li class="navigation-ul--li">
-        <a class="navigation-ul--li-link" href="#">Contact</a>
+        <a class="navigation-ul--li-link" href="#">
+            Contact
+        </a>
     </li>
 </ul>
 `;

@@ -1,57 +1,528 @@
-/*
-Error: File to import not found or unreadable: ./parts/header.scss.
-       Load path: F:/bookmark-landing-page-master/scss
-        on line 6 of F:\bookmark-landing-page-master\scss\main.scss
+.header {
+  background-color: #fff;
+  position: fixed; }
+  .header--nav {
+    padding: 50px 0px; }
+    .header--nav-login {
+      margin-left: 30px; }
+    .header--nav-menu-xs {
+      display: none !important;
+      cursor: pointer; }
 
-1: //  **** IMPORTS **** 
-2: // Helpers
-3: @import './variables.scss';
-4: @import './mixins.scss';
-5: // Page parts
-6: @import './parts/header.scss';
-7: @import './parts/footer.scss';
-8: 
-9: // **** GLOBAL STYLE **** 
-10: * {
-11:     font: {
+.header-scrolled {
+  transition: .5s;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(83, 104, 223, 0.75);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(83, 104, 223, 0.75);
+  box-shadow: 0px 0px 10px 0px rgba(83, 104, 223, 0.75); }
+  .header-scrolled nav {
+    padding: 20px 0px; }
 
-Backtrace:
-F:\bookmark-landing-page-master\scss\main.scss:6
-E:/koala instalacija/rubygems/gems/sass-3.5.2/lib/sass/tree/import_node.rb:67:in `rescue in import'
-E:/koala instalacija/rubygems/gems/sass-3.5.2/lib/sass/tree/import_node.rb:45:in `import'
-E:/koala instalacija/rubygems/gems/sass-3.5.2/lib/sass/tree/import_node.rb:28:in `imported_file'
-E:/koala instalacija/rubygems/gems/sass-3.5.2/lib/sass/tree/import_node.rb:37:in `css_import?'
-E:/koala instalacija/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:314:in `visit_import'
-E:/koala instalacija/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `visit'
-E:/koala instalacija/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
-E:/koala instalacija/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:79:in `block in with_base'
-E:/koala instalacija/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
-E:/koala instalacija/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:79:in `with_base'
-E:/koala instalacija/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `visit'
-E:/koala instalacija/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-E:/koala instalacija/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:52:in `map'
-E:/koala instalacija/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-E:/koala instalacija/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:171:in `block in visit_children'
-E:/koala instalacija/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
-E:/koala instalacija/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:170:in `visit_children'
-E:/koala instalacija/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-E:/koala instalacija/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:190:in `visit_root'
-E:/koala instalacija/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `visit'
-E:/koala instalacija/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:161:in `visit'
-E:/koala instalacija/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:10:in `visit'
-E:/koala instalacija/rubygems/gems/sass-3.5.2/lib/sass/tree/root_node.rb:36:in `css_tree'
-E:/koala instalacija/rubygems/gems/sass-3.5.2/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
-E:/koala instalacija/rubygems/gems/sass-3.5.2/lib/sass/engine.rb:389:in `_render_with_sourcemap'
-E:/koala instalacija/rubygems/gems/sass-3.5.2/lib/sass/engine.rb:307:in `render_with_sourcemap'
-E:/koala instalacija/rubygems/gems/sass-3.5.2/lib/sass/exec/sass_scss.rb:391:in `run'
-E:/koala instalacija/rubygems/gems/sass-3.5.2/lib/sass/exec/sass_scss.rb:63:in `process_result'
-E:/koala instalacija/rubygems/gems/sass-3.5.2/lib/sass/exec/base.rb:52:in `parse'
-E:/koala instalacija/rubygems/gems/sass-3.5.2/lib/sass/exec/base.rb:19:in `parse!'
-E:/koala instalacija/rubygems/gems/sass-3.5.2/bin/sass:13:in `<top (required)>'
-E:/koala instalacija/bin/sass:22:in `load'
-E:/koala instalacija/bin/sass:22:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: File to import not found or unreadable: ./parts/header.scss.\A        Load path: F:/bookmark-landing-page-master/scss\A         on line 6 of F:\bookmark-landing-page-master\scss\main.scss\A \A 1: //  **** IMPORTS **** \A 2: // Helpers\A 3: @import './variables.scss';\A 4: @import './mixins.scss';\A 5: // Page parts\A 6: @import './parts/header.scss';\A 7: @import './parts/footer.scss';\A 8: \A 9: // **** GLOBAL STYLE **** \A 10: * {\A 11:     font: {"; }
+.header-mobile-menu {
+  background-color: rgba(83, 104, 223, 0.75);
+  height: 100%; }
+
+@media (max-width: 768px) {
+  .header--nav-menu-xs {
+    display: block !important; }
+  .header--nav-menu-lg {
+    display: none !important; } }
+.footer {
+  background-color: #5368df; }
+  .footer--contact {
+    padding: 50px 0px;
+    padding-bottom: 80px;
+    color: #fff; }
+    .footer--contact-content {
+      max-width: 550px;
+      width: 100%; }
+      .footer--contact-content h3 {
+        font-weight: 500;
+        font-size: 38px; }
+      .footer--contact-content h5 {
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        font-weight: 400;
+        font-size: 17px; }
+  .footer--nav {
+    padding: 30px 0px;
+    background-color: #252b46; }
+    .footer--nav-social a {
+      display: inline-block;
+      color: #fff;
+      margin-left: 40px; }
+  .footer .contact-mail {
+    width: calc(100% - 170px);
+    position: relative; }
+    .footer .contact-mail--input {
+      width: 100%;
+      background-color: #fff;
+      color: #252b46;
+      padding: 16px 20px;
+      font-size: 15px;
+      border-width: 0px;
+      border-radius: 6px; }
+    .footer .contact-mail--error {
+      visibility: hidden;
+      position: absolute;
+      width: calc(100% - 30px);
+      left: 0px;
+      bottom: -31px;
+      background-color: #fa5757;
+      color: #fff;
+      padding: 10px 15px;
+      font-size: 13px;
+      font-style: italic;
+      border-bottom-left-radius: 6px;
+      border-bottom-right-radius: 6px; }
+    .footer .contact-mail--error-icon {
+      visibility: hidden;
+      position: absolute;
+      top: 15px;
+      right: 15px; }
+
+.footer-error .contact-mail--input, .footer-error button {
+  border: 2px solid #fa5757; }
+.footer-error button {
+  background-color: #fff;
+  color: #fa5757; }
+  .footer-error button:hover {
+    background-color: #fff;
+    color: #fa5757; }
+.footer-error .contact-mail--error, .footer-error .contact-mail--error-icon {
+  visibility: visible; }
+
+@media (max-width: 768px) {
+  .footer form {
+    justify-content: center;
+    flex-wrap: wrap; }
+    .footer form .contact-mail {
+      width: 100%;
+      margin-bottom: 20px; }
+    .footer form #contact_submit {
+      width: 100%; }
+
+  .footer-nav-wrapper {
+    justify-content: center;
+    flex-direction: column; }
+    .footer-nav-wrapper--div {
+      justify-content: center;
+      flex-direction: column; }
+
+  .footer-logo {
+    margin-bottom: 40px; }
+
+  .footer--nav-social li:first-of-type a {
+    margin-left: 0px; } }
+* {
+  font-family: "Rubik", sans-serif;
+  font-size: 18px; }
+
+body {
+  margin: 0px;
+  padding: 0px; }
+
+.container-fluid {
+  width: 100%; }
+
+.container {
+  max-width: 1440px;
+  width: calc(100% - 30px);
+  margin: 0px auto; }
+
+.w-100 {
+  width: 100%; }
+
+ul {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none; }
+
+.d-none {
+  display: none; }
+
+.d-flex {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex; }
+
+.flex-row {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row; }
+
+.flex-column {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column; }
+
+.flex-justify-align-center {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.flex-space-between {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+
+.flex-space-around {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: space-around; }
+
+.flex-space-evenly {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly; }
+
+.flex-start {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; }
+
+.flex-end {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; }
+
+.text-left {
+  text-align: left; }
+
+.text-center {
+  text-align: center; }
+
+.text-right {
+  text-align: right; }
+
+.text-white {
+  color: #fff; }
+
+a {
+  color: inherit;
+  text-decoration: none; }
+
+p {
+  color: #9194a1;
+  font-size: 20px; }
+
+h1 {
+  color: #252b46;
+  font-size: 48px; }
+
+h3 {
+  color: #252b46;
+  font-size: 32px; }
+
+.btn-theme {
+  -webkit-box-shadow: 0px 15px 40px -20px rgba(83, 104, 223, 0.75);
+  -moz-box-shadow: 0px 15px 40px -20px rgba(83, 104, 223, 0.75);
+  box-shadow: 0px 15px 40px -20px rgba(83, 104, 223, 0.75);
+  background-color: #5368df;
+  color: #fff;
+  padding: 15px 30px;
+  border: 2px solid #5368df;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 500; }
+  .btn-theme:hover, .btn-theme:focus, .btn-theme:active {
+    transition: .5s;
+    background-color: transparent;
+    color: #5368df;
+    border: 2px solid #5368df; }
+
+.btn-light {
+  -webkit-box-shadow: 0px 15px 40px -20px rgba(83, 104, 223, 0.75);
+  -moz-box-shadow: 0px 15px 40px -20px rgba(83, 104, 223, 0.75);
+  box-shadow: 0px 15px 40px -20px rgba(83, 104, 223, 0.75);
+  background-color: #f1f2f3;
+  color: #252b46;
+  padding: 15px 30px;
+  border: 2px solid #f1f2f3;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 500; }
+  .btn-light:hover, .btn-light:focus, .btn-light:active {
+    transition: .5s;
+    background-color: transparent;
+    color: #f1f2f3;
+    border: 2px solid #f1f2f3; }
+  .btn-light:hover, .btn-light:focus, .btn-light:active {
+    color: #252b46;
+    border-color: #252b46; }
+
+.btn-danger {
+  -webkit-box-shadow: 0px 15px 40px -20px rgba(83, 104, 223, 0.75);
+  -moz-box-shadow: 0px 15px 40px -20px rgba(83, 104, 223, 0.75);
+  box-shadow: 0px 15px 40px -20px rgba(83, 104, 223, 0.75);
+  background-color: #fa5757;
+  color: #fff;
+  padding: 15px 30px;
+  border: 2px solid #fa5757;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 500; }
+  .btn-danger:hover, .btn-danger:focus, .btn-danger:active {
+    transition: .5s;
+    background-color: transparent;
+    color: #fa5757;
+    border: 2px solid #fa5757; }
+
+.navigation-ul {
+  margin: 0px;
+  padding: 0px;
+  color: #252b46; }
+  .navigation-ul--li-link {
+    display: inline-block;
+    margin: 0px 30px;
+    text-transform: uppercase;
+    font-size: 18px; }
+    .navigation-ul--li-link:hover {
+      transition: .5s;
+      color: #fa5757; }
+
+.rounded-blue-shape-left {
+  z-index: 0px;
+  width: 35%;
+  height: 400px;
+  position: absolute;
+  bottom: 0px;
+  background-color: #5368df;
+  left: 0px;
+  border-top-right-radius: 200px;
+  border-bottom-right-radius: 200px; }
+
+.rounded-blue-shape-right {
+  z-index: 0px;
+  width: 35%;
+  height: 400px;
+  position: absolute;
+  bottom: 0px;
+  background-color: #5368df;
+  right: 0px;
+  border-top-left-radius: 200px;
+  border-bottom-left-radius: 200px; }
+
+.section-descriptor {
+  max-width: 550px;
+  width: 100%; }
+
+.extension {
+  -webkit-box-shadow: 0px 15px 40px -20px rgba(83, 104, 223, 0.75);
+  -moz-box-shadow: 0px 15px 40px -20px rgba(83, 104, 223, 0.75);
+  box-shadow: 0px 15px 40px -20px rgba(83, 104, 223, 0.75);
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px; }
+  .extension-divider {
+    width: 100%;
+    padding-bottom: 20px; }
+    .extension-divider-img {
+      width: 100%; }
+  .extension--body {
+    margin: 0px;
+    padding: 0px;
+    padding: 20px; }
+    .extension--body-img {
+      width: 100px; }
+    .extension--body-title {
+      color: #252b46;
+      margin-bottom: 10px;
+      font-size: 20px; }
+    .extension--body p {
+      font-size: 15px; }
+  .extension--footer {
+    padding: 20px; }
+    .extension--footer-link {
+      display: inline-block;
+      width: 100%; }
+
+.tabs-wrapper {
+  padding: 50px 0px;
+  width: 100%; }
+
+:host([direction="column"]) .tab-trigger {
+  flex-direction: column;
+  border: 2px solid red; }
+
+.tab-trigger {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: var(--tab-gap, 0px);
+  margin-bottom: 60px; }
+
+.tab-content-wrapper {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+  width: 100%; }
+  .tab-content-wrapper > div:nth-child(2) {
+    padding-left: 30px; }
+  .tab-content-wrapper img {
+    width: 100%; }
+
+.tab-trigger ::slotted(*) {
+  padding: 20px 30px;
+  color: #9194a1;
+  border-bottom: 1px solid #e3e4e8;
+  user-select: none;
+  cursor: pointer; }
+  .tab-trigger ::slotted(*):hover {
+    transition: .5s;
+    color: #fa5757; }
+
+.tab-trigger ::slotted(.selected) {
+  border-bottom: 4px solid #fa5757;
+  color: #252b46; }
+
+.tab-contents ::slotted(*) {
+  display: none; }
+
+.tab-contents ::slotted(.selected) {
+  display: block;
+  padding: 5px; }
+
+.accordion {
+  padding: 50px 0px;
+  width: 100%; }
+  .accordion--item-trigger {
+    padding: 20px 0px;
+    color: #252b46;
+    font-size: 20px;
+    border-top: 1px solid #e3e4e8;
+    cursor: pointer; }
+    .accordion--item-trigger p {
+      margin: 0px;
+      padding: 0px; }
+    .accordion--item-trigger img {
+      padding: 0px 20px; }
+    .accordion--item-trigger:hover {
+      transition: .5s;
+      color: #fa5757; }
+  .accordion--item-content {
+    display: none; }
+    .accordion--item-content p {
+      color: #5e616e;
+      font-size: 17px;
+      text-align: left; }
+  .accordion--item:last-of-type {
+    border-bottom: 1px solid #e3e4e8; }
+
+.home-hero {
+  padding-top: 132px; }
+  .home-hero--div {
+    padding: 120px 0px; }
+    .home-hero--div h1 {
+      margin-top: 0px; }
+    .home-hero--div img {
+      width: 100%; }
+
+.home-extensions--div {
+  padding: 120px 0px; }
+  .home-extensions--div-items {
+    width: 100%;
+    max-width: 1200px; }
+
+.home-extensions--div-items > div:nth-of-type(1n) {
+  margin-top: 0px; }
+
+.home-extensions--div-items > div:nth-of-type(2n) {
+  margin-top: 100px; }
+
+.home-extensions--div-items > div:nth-of-type(3n) {
+  margin-top: 200px; }
+
+.home-faq {
+  padding: 120px 0px; }
+  .home-faq--div {
+    width: 100%;
+    max-width: 550px; }
+
+.border-red {
+  border: 1px solid red; }
+
+.clearfix {
+  clear: both; }
+
+@media (max-width: 992px) {
+  .home-hero--div {
+    padding: 80px 0px;
+    justify-content: center;
+    flex-wrap: wrap-reverse; }
+
+  .home-features--div {
+    justify-content: center;
+    flex-wrap: wrap-reverse; }
+
+  .home-extensions--div {
+    padding: 60px 0px; }
+    .home-extensions--div-items {
+      justify-content: center;
+      flex-wrap: wrap; }
+      .home-extensions--div-items > div {
+        width: 100%;
+        margin-top: 50px !important; }
+
+  .extension {
+    margin: 0px auto; } }
+@media (max-width: 768px) {
+  .home-hero--div {
+    padding: 0px 0px; }
+
+  .navigation-ul {
+    justify-content: center;
+    flex-direction: column; }
+    .navigation-ul a {
+      padding-bottom: 40px;
+      color: white; }
+
+  .tab-content-wrapper {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 100%; }
+    .tab-content-wrapper > div {
+      width: 100%; }
+    .tab-content-wrapper > div:nth-child(2) {
+      padding-left: 0px; } }
+
+/*# sourceMappingURL=main.css.map */
