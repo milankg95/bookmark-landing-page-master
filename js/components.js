@@ -1,28 +1,3 @@
-// <section-wrapper />
-
-const sectionWrapperTemplate = document.createElement('template');
-sectionWrapperTemplate.innerHTML = `
-    <style>
-        @import "./css/main.css"
-    </style>
-    <section class="container-fluid"">
-        <div class="container">
-            <slot name="content" />
-        </div>
-    </section>
-`;
-
-class SectionWrapper extends HTMLElement {
-    constructor() {
-        super();
-
-        this.attachShadow({mode: 'open'});
-        this.shadowRoot.appendChild(sectionWrapperTemplate.content.cloneNode(true));
-    }
-}
-
-// <section-descriptor />
-
 class SectionDescriptor extends HTMLElement {
     constructor() {
         super();
@@ -79,8 +54,6 @@ class SectionDescriptor extends HTMLElement {
     }
 }
 
-// <extension-item />
-
 class ExtensionItem extends HTMLElement {
     constructor() {
         super();
@@ -89,7 +62,6 @@ class ExtensionItem extends HTMLElement {
         const extensionTitle = this.getAttribute('title');
         const extensionVersion = this.getAttribute('version');
         const extensionLink = this.getAttribute('link');
-
 
         this.innerHTML = `
             <article class="extension">
@@ -109,6 +81,5 @@ class ExtensionItem extends HTMLElement {
     }
 }
 
-customElements.define('section-wrapper', SectionWrapper);
 customElements.define('section-descriptor', SectionDescriptor);
 customElements.define('extension-item', ExtensionItem);

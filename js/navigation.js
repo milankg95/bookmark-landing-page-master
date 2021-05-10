@@ -15,6 +15,12 @@ class NavigationComponent extends HTMLElement {
         let loginTemplate = ``;
         let socialTemplate = ``;
 
+        var listItemsArr = [];
+
+        if (listItems !== '') {
+            listItemsArr = JSON.parse(listItems);
+        }        
+
         if (navigationParent !== null) {
             switch(navigationParent) {
                 case 'header':
@@ -30,7 +36,7 @@ class NavigationComponent extends HTMLElement {
 
         if (showLogin !== null && showLogin === "true") {
             loginTemplate = `
-                <a class="btn-danger navigation--div-login" href="#">LOGIN</a>
+                <a class="btn-danger navigation--div-login" href="#" part="login">LOGIN</a>
             `;
         }
 
@@ -70,6 +76,23 @@ class NavigationComponent extends HTMLElement {
 
         const templateNavigation = document.createElement('template');
 
+        var templateNavigationUl = document.createElement('ul');
+        templateNavigationUl.classList.add('flex-row', 'navigation-ul');
+
+        if (listItemsArr.length > 0) {
+            listItemsArr.map(function(val) {
+                var templateLiItem = `
+                    <li class="navigation-ul--li">
+                        <a class="navigation-ul--li-link" href="${val['link']}" style="color: ${textColor};" part="link">
+                            ${val['title']}
+                        </a>
+                    </li>
+                `;
+
+                templateNavigationUl.append(templateLiItem);
+            });
+        }
+
         templateNavigation.innerHTML = `
         <style>
             @import "./css/main.css"
@@ -78,21 +101,7 @@ class NavigationComponent extends HTMLElement {
         <nav class="flex-space-between flex-row navigation ${navigationParentClass}">
             <div class="flex-space-between flex-row navigation--div">
                 <ul class="flex-row navigation-ul">
-                    <li class="navigation-ul--li">
-                        <a class="navigation-ul--li-link" href="#" style="color: ${textColor};">
-                            Features
-                        </a>
-                    </li>
-                    <li class="navigation-ul--li">
-                        <a class="navigation-ul--li-link" href="#" style="color: ${textColor};">
-                            Pricing
-                        </a>
-                    </li>
-                    <li class="navigation-ul--li">
-                        <a class="navigation-ul--li-link" href="#" style="color: ${textColor};">
-                            Contact
-                        </a>
-                    </li>
+                    ${templateNavigationUl.innerText}
                 </ul>
                 ${loginTemplate}
             </div>
@@ -100,15 +109,7 @@ class NavigationComponent extends HTMLElement {
                 ${socialTemplate}
             </div>
         </nav>
-        
         `;
-
-        console.log([
-            showLogin,
-            showSocials,
-            textColor,
-            listItems
-        ]);
 
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.appendChild(templateNavigation.content.cloneNode(true));

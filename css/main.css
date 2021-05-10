@@ -45,7 +45,7 @@
   .header-mobile-menu .header--nav-logo circle, .header-mobile-menu .header--nav-logo .letters {
     fill: #fff; }
   .header-mobile-menu .header--nav-logo path {
-    fill: rgba(37, 43, 70, 0.9); } }
+    fill: rgba(37, 43, 70, 0.95); } }
 .footer {
   background-color: #5368df; }
   .footer--contact {
@@ -360,7 +360,17 @@ h3 {
     font-size: 18px; }
     .navigation-ul--li-link:hover {
       transition: .5s;
-      color: #fa5757; }
+      color: #fa5757 !important; }
+
+.navigation--div-login {
+  margin-left: 30px; }
+.navigation--div-social a {
+  display: inline-block;
+  color: #fff;
+  margin-left: 40px; }
+  .navigation--div-social a:hover svg path {
+    transition: .5s;
+    fill: #fa5757; }
 
 .rounded-blue-shape-left {
   z-index: 0;
@@ -555,10 +565,18 @@ tab-component {
     padding: 80px 0px;
     justify-content: center;
     flex-wrap: wrap-reverse; }
+  .home-hero .rounded-blue-shape-right {
+    width: 75%;
+    height: 30%;
+    top: 25%; }
 
   .home-features--div {
     justify-content: center;
     flex-wrap: wrap-reverse; }
+  .home-features .rounded-blue-shape-left {
+    width: 45%;
+    height: 30%;
+    top: 65%; }
 
   .home-extensions--div {
     padding: 60px 0px; }
@@ -572,6 +590,9 @@ tab-component {
   .extension {
     margin: 0px auto; } }
 @media (max-width: 768px) {
+  .visible-sm {
+    display: flex !important; }
+
   .container {
     width: calc(100% - 50px); }
 
@@ -594,6 +615,9 @@ tab-component {
     color: #252b46;
     border-color: #f1f2f3; }
 
+  .section-descriptor {
+    max-width: 100%; }
+
   .home-hero--div {
     padding: 40px 0px; }
     .home-hero--div p {
@@ -605,6 +629,10 @@ tab-component {
 
   .home-features--div {
     padding-top: 60px; }
+  .home-features .rounded-blue-shape-left {
+    width: 75%;
+    height: 20%;
+    top: 55%; }
 
   .home-faq--div {
     width: 100%; }
@@ -652,49 +680,48 @@ tab-component {
       display: block;
       width: 160px;
       background-color: #fa5757;
-      height: 4px; } }
-.clearfix {
-  clear: both; }
-
-.navigation--div-login {
-  margin-left: 30px; }
-.navigation--div-social a {
-  display: inline-block;
-  color: #fff;
-  margin-left: 40px; }
-  .navigation--div-social a:hover svg path {
-    transition: .5s;
-    fill: #fa5757; }
-
-@media (max-width: 768px) {
-  .visible-sm {
-    display: flex !important; }
+      height: 4px; }
 
   .navigation {
     flex-direction: column; }
     .navigation--div {
+      width: calc(100% - 30px);
       flex-direction: column; }
       .navigation--div-login {
         margin-left: 0px; }
       .navigation--div-social li:nth-of-type(1) a {
         margin-left: 0px; }
     .navigation-ul {
+      width: 100%;
       flex-direction: column;
       justify-content: center;
       align-items: center; }
+      .navigation-ul li {
+        width: 100%; }
       .navigation-ul a {
         margin-bottom: 40px;
         color: white; }
         .navigation-ul a:hover {
-          color: inherit; }
+          color: #fff !important; }
 
   .header-mobile-menu navigation-component {
     width: calc(100% - 5px); }
-    .header-mobile-menu navigation-component .navigation {
-      border: 2px solid red; }
   .header-mobile-menu navigation-component::part(navigation) {
-    padding: 20px 0px; }
-    .header-mobile-menu navigation-component::part(navigation) li {
-      border: 1px solid blue; } }
+    padding: 40px 0px; }
+  .header-mobile-menu navigation-component::part(login) {
+    width: 100%;
+    margin-top: 30px;
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff; }
+  .header-mobile-menu navigation-component::part(link) {
+    width: calc(100% - 30px);
+    margin: 0px;
+    padding: 20px;
+    color: #fff;
+    border-top: 1px solid #fff;
+    text-align: center; } }
+.clearfix {
+  clear: both; }
 
 /*# sourceMappingURL=main.css.map */

@@ -155,7 +155,6 @@ h3 {
 }
 
 // Others
-
 .navigation-ul {
     @include marginPadding(0px);
     &--li {
@@ -166,7 +165,27 @@ h3 {
             font-size: 18px;
             &:hover {
                 transition: .5s;
-                color: $softRed;
+                color: $softRed !important;
+            }
+        }
+    }
+}
+
+// Navigation component
+.navigation {
+    &--div {
+        &-login {
+            margin-left: 30px;
+        }
+        &-social a {
+            display: inline-block;
+            color: #fff;
+            margin-left: 40px;
+            &:hover {
+                svg path {
+                    transition: .5s;
+                    fill: $softRed;
+                }
             }
         }
     }
@@ -291,7 +310,6 @@ tab-component {
 }
 
 // Accordion
-
 .accordion {
     @include paddingVertical(50px);
     width: 100%;
@@ -364,8 +382,6 @@ tab-component {
 }
 
 // Home features
-.home-features {
-}
 
 // Home extensions
 .home-extensions {
@@ -394,8 +410,7 @@ tab-component {
     }
 }
 
-
-
+// **** MEDIA **** 
 
 // Large
 @media (max-width: $largeWidth) {
@@ -405,12 +420,23 @@ tab-component {
             justify-content: center;
             flex-wrap: wrap-reverse;
         }
+        
+        .rounded-blue-shape-right {
+            width: 75%;
+            height: 30%;
+            top: 25%;
+        }
     }
 
     .home-features {
         &--div {
             justify-content: center;
             flex-wrap: wrap-reverse;
+        }
+        .rounded-blue-shape-left {
+            width: 45%;
+            height: 30%;
+            top: 65%;
         }
     }
 
@@ -435,6 +461,10 @@ tab-component {
 
 // Medium
 @media (max-width: $mediumWidth) {
+    .visible-sm {
+        display: flex !important;
+    }
+
     .container {
         width: calc(100% - 50px);
     }
@@ -465,6 +495,10 @@ tab-component {
         }
     }
 
+    .section-descriptor {
+        max-width: 100%;
+    }
+
     .home-hero {
         &--div {
             @include paddingVertical(40px);
@@ -484,20 +518,17 @@ tab-component {
         &--div {
             padding-top: 60px;
         }
+
+        .rounded-blue-shape-left {
+            width: 75%;
+            height: 20%;
+            top: 55%;
+        }
     }
 
     .home-faq--div {
         width: 100%;
     }
-
-    // .navigation-ul {
-    //     justify-content: center;
-    //     flex-direction: column;
-    //     a {
-    //         padding-bottom: 40px;
-    //         color: white;
-    //     }
-    // }
 
     .tab-content-wrapper {
         @include displayFlex();
@@ -512,8 +543,6 @@ tab-component {
         }
     }
 
-
-    // Tabs
     tab-component {
         .unselected:hover {
             color: $grayishBlue;
@@ -553,42 +582,11 @@ tab-component {
             height: 4px;
         }
     }
-}
 
-.clearfix {
-    clear: both;
-}
-
-
-
-// Navigation component
-.navigation {
-    &--div {
-        &-login {
-            margin-left: 30px;
-        }
-        &-social a {
-            display: inline-block;
-            color: #fff;
-            margin-left: 40px;
-            &:hover {
-                svg path {
-                    transition: .5s;
-                    fill: $softRed;
-                }
-            }
-        }
-    }
-}
-
-@media (max-width: $mediumWidth) {
-    .visible-sm {
-        display: flex !important;
-    }
-    // Navigation
     .navigation {
         flex-direction: column;
         &--div {
+            width: calc(100% - 30px);
             flex-direction: column;
             &-login {
                 margin-left: 0px;
@@ -598,48 +596,51 @@ tab-component {
             }
         }
         &-ul {
+            width: 100%;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            li {
+                width: 100%;
+            }
             a {
                 margin-bottom: 40px;
                 color: white;
                 &:hover {
-                    color: inherit;
+                    color: #fff !important;
                 }
             }
         }
     }
 
-    // Header mobile
     .header-mobile-menu {
         navigation-component {
             width: calc(100% - 5px);
-
-            .navigation {
-                border: 2px solid red;
-            }
         }
 
         navigation-component::part(navigation) {
-            @include paddingVertical(20px);
-            li {
-                border: 1px solid blue;
-            }
+            @include paddingVertical(40px);
         }
 
+        navigation-component::part(login) {
+            width: 100%;
+            margin-top: 30px;
+            background-color: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+        }
 
-        // navigation-component(.navigation--div-social) {
-        //     border: 2px solid white;
-        // }
-
-        // .header-navigation.navigation {
-        //     border: 2px solid red !important;
-        //     .navigation--div {
-        //         &-login {
-                    
-        //         }
-        //     }
-        // }
+        navigation-component::part(link) {
+            width: calc(100% - 30px);
+            margin: 0px;
+            padding: 20px;
+            color: #fff;
+            border-top: 1px solid #fff;
+            text-align: center;
+        }
     }
+}
+
+.clearfix {
+    clear: both;
 }

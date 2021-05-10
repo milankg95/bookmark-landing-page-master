@@ -1,5 +1,6 @@
 // Toggle header class
 
+const contactSubmitBtn = document.getElementById('contact_submit');
 var scrollPosition = window.scrollY;
 var mainHeader = document.getElementById('header');
 
@@ -16,8 +17,6 @@ window.addEventListener('scroll', function() {
 });
 
 // Contact form
-const contactSubmitBtn = document.getElementById('contact_submit');
-
 contactSubmitBtn.addEventListener('click', function() {
     var emailInput = document.getElementById('email_address');
     var footer = document.getElementById('footer');
@@ -34,21 +33,29 @@ contactSubmitBtn.addEventListener('click', function() {
 // Header mobile
 const headerMobileTrigger = document.getElementById('header_mobile_trigger');
 
-headerMobileTrigger.addEventListener('click', function() {
-    let triggerIcon = document.querySelector("#header_mobile_trigger img");
+headerMobileTrigger.addEventListener('click', function(e) {
 
-    console.log(triggerIcon);
+    e.preventDefault();
+
+    let triggerIcon = document.querySelector("#header_mobile_trigger img");
 
     mainHeader.classList.toggle('header-mobile-menu');
 
     if (mainHeader.classList.contains('header-mobile-menu')) {
-        console.log('otvori');
         triggerIcon.setAttribute('src', './images/icon-close.svg');
     } else {
-        console.log('zatvori');
         triggerIcon.setAttribute('src', './images/icon-hamburger.svg');
     }
 });
+
+window.addEventListener('resize', function(event) {
+    if (mainHeader.classList.contains('header-mobile-menu')) {
+        if (window.innerWidth > 768) {
+            mainHeader.classList.remove('header-mobile-menu');
+            document.querySelector("#header_mobile_trigger img").setAttribute('src', './images/icon-hamburger.svg');
+        }
+    }
+}, true);
 
 // FUNCTIONS
 
