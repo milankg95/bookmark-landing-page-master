@@ -1,16 +1,16 @@
 // Toggle header class
 
 var scrollPosition = window.scrollY;
-var logoContainer = document.getElementById('header');
+var mainHeader = document.getElementById('header');
 
 window.addEventListener('scroll', function() {
 
     scrollPosition = window.scrollY;
 
     if (scrollPosition >= 30) {
-        logoContainer.classList.add('header-scrolled');
+        mainHeader.classList.add('header-scrolled');
     } else {
-        logoContainer.classList.remove('header-scrolled');
+        mainHeader.classList.remove('header-scrolled');
     }
 
 });
@@ -28,6 +28,25 @@ contactSubmitBtn.addEventListener('click', function() {
         } else {
             footer.classList.remove('footer-error');
         }
+    }
+});
+
+// Header mobile
+const headerMobileTrigger = document.getElementById('header_mobile_trigger');
+
+headerMobileTrigger.addEventListener('click', function() {
+    let triggerIcon = document.querySelector("#header_mobile_trigger img");
+
+    console.log(triggerIcon);
+
+    mainHeader.classList.toggle('header-mobile-menu');
+
+    if (mainHeader.classList.contains('header-mobile-menu')) {
+        console.log('otvori');
+        triggerIcon.setAttribute('src', './images/icon-close.svg');
+    } else {
+        console.log('zatvori');
+        triggerIcon.setAttribute('src', './images/icon-hamburger.svg');
     }
 });
 

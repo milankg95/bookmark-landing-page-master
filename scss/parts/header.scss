@@ -8,29 +8,27 @@
     background-color: #fff;
     position: fixed;
     z-index: 10;
+
     &--nav {
         @include paddingVertical(50px);
-        &-login {
-            margin-left: 30px;
-        }
         &-menu-xs {
             display: none !important;
             cursor: pointer;
         }
     }
-}
 
-.header-scrolled {
-    transition: .5s;
-    @include outerBoxShadowGenerator(0px, 0px, 10px, 0px, $softBlue, .75);
-    nav {
-        @include paddingVertical(20px);
+    &-scrolled {
+        transition: .5s;
+        @include outerBoxShadowGenerator(0px, 0px, 10px, 0px, $softBlue, .75);
+        nav {
+            @include paddingVertical(20px);
+        }
     }
-}
 
-.header-mobile-menu {
-    background-color: rgba($softBlue, .75);
-    height: 100%;
+    &-mobile-menu {
+        background-color: rgba($veryDarkBlue, .90);
+        height: 100%;
+    }
 }
 
 
@@ -38,11 +36,39 @@
 @media (max-width: $mediumWidth) {
     .header {
         &--nav {
+            overflow-y: auto;
+            position: relative;
+            flex-direction: column;
+            &-logo {
+                @include displayFlex();
+                justify-content: flex-start !important;
+                align-items: center;
+                width: 100%;
+            }
+
+            navigation-component {
+                display: none;
+            }
+
             &-menu-xs {
                 display: block !important;
+                position: absolute;
+                right: 0px;
             }
-            &-menu-lg {
-                display: none !important;
+        }
+    }
+
+    .header-mobile-menu {
+        navigation-component {
+            padding-top: 40px;
+            display: block;
+        }
+        .header--nav-logo {
+            circle, .letters {
+                fill: #fff;
+            }
+            path {
+                fill: rgba($veryDarkBlue, .90);
             }
         }
     }

@@ -33,6 +33,10 @@ body {
     width: 100%;
 }
 
+.visible-sm {
+    display: none !important;
+}
+
 ul {
     @include marginPadding(0px);
     list-style-type: none;
@@ -154,7 +158,6 @@ h3 {
 
 .navigation-ul {
     @include marginPadding(0px);
-    color: $veryDarkBlue;
     &--li {
         &-link {
             display: inline-block;
@@ -487,14 +490,14 @@ tab-component {
         width: 100%;
     }
 
-    .navigation-ul {
-        justify-content: center;
-        flex-direction: column;
-        a {
-            padding-bottom: 40px;
-            color: white;
-        }
-    }
+    // .navigation-ul {
+    //     justify-content: center;
+    //     flex-direction: column;
+    //     a {
+    //         padding-bottom: 40px;
+    //         color: white;
+    //     }
+    // }
 
     .tab-content-wrapper {
         @include displayFlex();
@@ -554,4 +557,89 @@ tab-component {
 
 .clearfix {
     clear: both;
+}
+
+
+
+// Navigation component
+.navigation {
+    &--div {
+        &-login {
+            margin-left: 30px;
+        }
+        &-social a {
+            display: inline-block;
+            color: #fff;
+            margin-left: 40px;
+            &:hover {
+                svg path {
+                    transition: .5s;
+                    fill: $softRed;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $mediumWidth) {
+    .visible-sm {
+        display: flex !important;
+    }
+    // Navigation
+    .navigation {
+        flex-direction: column;
+        &--div {
+            flex-direction: column;
+            &-login {
+                margin-left: 0px;
+            }
+            &-social li:nth-of-type(1) a {
+                margin-left: 0px;
+            }
+        }
+        &-ul {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            a {
+                margin-bottom: 40px;
+                color: white;
+                &:hover {
+                    color: inherit;
+                }
+            }
+        }
+    }
+
+    // Header mobile
+    .header-mobile-menu {
+        navigation-component {
+            width: calc(100% - 5px);
+
+            .navigation {
+                border: 2px solid red;
+            }
+        }
+
+        navigation-component::part(navigation) {
+            @include paddingVertical(20px);
+            li {
+                border: 1px solid blue;
+            }
+        }
+
+
+        // navigation-component(.navigation--div-social) {
+        //     border: 2px solid white;
+        // }
+
+        // .header-navigation.navigation {
+        //     border: 2px solid red !important;
+        //     .navigation--div {
+        //         &-login {
+                    
+        //         }
+        //     }
+        // }
+    }
 }
